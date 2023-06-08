@@ -1,79 +1,72 @@
-[gd_scene load_steps=7 format=3 uid="uid://cb1ydrjpklce4"]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource type="Texture2D" uid="uid://2oepsig5h2mr" path="res://assets/Character/AnimationSheet_Character.png" id="1_cadgw"]
+[ext_resource path="res://assets/Character/AnimationSheet_Character.png" type="Texture" id=1]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvclr"]
-size = Vector2(16, 28)
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 5.5 )
 
-[sub_resource type="Animation" id="Animation_mav7w"]
-resource_name = "walk"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [16, 17, 18, 19]
-}
-
-[sub_resource type="Animation" id="Animation_cc10a"]
+[sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [17]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 16 ]
 }
 
-[sub_resource type="Animation" id="Animation_4wend"]
+[sub_resource type="Animation" id=3]
 resource_name = "idle"
-length = 0.5
-loop_mode = 1
+length = 0.4
+loop = true
 tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [0, 1]
+"values": [ 0, 1 ]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0rxso"]
-_data = {
-"RESET": SubResource("Animation_cc10a"),
-"idle": SubResource("Animation_4wend"),
-"walk": SubResource("Animation_mav7w")
+[sub_resource type="Animation" id=4]
+resource_name = "walk"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19 ]
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_cadgw")
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
 hframes = 8
 vframes = 9
-frame = 17
+frame = 19
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2)
-shape = SubResource("RectangleShape2D_xvclr")
+position = Vector2( -1, 10.5 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_0rxso")
-}
+anims/RESET = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/walk = SubResource( 4 )
