@@ -1,26 +1,39 @@
-extends CharacterBody2D
+extends KinematicBody2D
 
-@export var vel = 150
-@onready var _animation_player = $AnimationPlayer
+export (int) var speed = 200
 
-func player_movement():
-	var input_dir = Input.get_vector("left", "right", "up", "down")
-	velocity = input_dir * vel
+var velocity = Vector2()
+onready var _animation_player = $AnimationPlayer
+
+func get_input():
+	velocity = Vector2()
+	if Input.is_action_pressed("right"):
+		velocity.x += 1
+		
+	if Input.is_action_pressed("left"):
+		velocity.x -= 1
+		
+	if Input.is_action_pressed("down"):
+		velocity.y += 1
+		
+	if Input.is_action_pressed("up"):
+		velocity.y -= 1
+		
+	velocity = velocity.normalized() * speed
 	
-	if input_dir.x > 0:
-		$Sprite2D.flip_h = false
+func set_anims():
+	if Input.is_action_pressed("right"):
+		$Sprite.flip_h = false
 		_animation_player.play("walk")
-		
-	elif input_dir.x < 0:
-		$Sprite2D.flip_h = true
+	elif Input.is_action_pressed("left"):
+		$Sprite.flip_h = true
 		_animation_player.play("walk")
-		
-	elif input_dir.x == 0 && input_dir.y > 0 || input_dir.x == 0 && input_dir.y < 0:
+	elif Input.is_action_pressed("down") || Input.is_action_pressed("up") :
 		_animation_player.play("walk")
-		
 	else:
 		_animation_player.play("idle")
-	
+
 func _physics_process(delta):
-	player_movement()
-	move_and_slide()
+	get_input()
+	set_anims()
+	velocity = move_and_slide(velocity)
