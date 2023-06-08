@@ -60,7 +60,7 @@ tracks/0/keys = {
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 9
-frame = 19
+frame = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 10.5 )
