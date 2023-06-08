@@ -1,8 +1,6 @@
 [
-	{"name": "Minos", "text": "Texto de prueba 1"},
-	{"name": "Minos", "text": "Texto de prueba 2"},
-	{"name": "Minos", "text": "Texto de prueba 3"},
-	{"name": "Minos", "text": "Texto de prueba 4"},
-	{"name": "Minos", "text": "Texto de prueba 5"},
-	{"name": "Minos", "text": "Texto de prueba 6"}
+	{"name": "Minos", "text": "..."},
+	{"name": "Minos", "text": "Yes, I can talk."},
+	{"name": "Minos", "text": "No, you wont leave here unscathed"},
+	{"name": "Minos", "text": "GRRRRR!"}
 ]

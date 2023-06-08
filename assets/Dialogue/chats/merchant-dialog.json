@@ -1,8 +1,13 @@
 [
-	{"name": "Merchant", "text": "Texto de prueba 1"},
-	{"name": "Merchant", "text": "Texto de prueba 2"},
-	{"name": "Merchant", "text": "Texto de prueba 3"},
-	{"name": "Merchant", "text": "Texto de prueba 4"},
-	{"name": "Merchant", "text": "Texto de prueba 5"},
-	{"name": "Merchant", "text": "Texto de prueba 6"}
+	{"name": " ", "text": "..."},
+	{"name": "Merchant", "text": "...Welcome to my shop stranger."},
+	{"name": "Merchant", "text": "There's some interesting stuff here you might want to take."},
+	{"name": "Merchant", "text": "but..."},
+	{"name": "Merchant", "text": "THEY'RE NOT FOR SALE! SO DON'T TOUCH ANYTHING!"},
+	{"name": "Merchant", "text": "Thanks."},
+	{"name": " ", "text": "..."},
+	{"name": " ", "text": "<<The merchant keeps staring at you.>>"},
+	{"name": "Merchant", "text": "Oh, I see you are a Crypto Guard."},	
+	{"name": "Merchant", "text": "..."},
+	{"name": "Merchant", "text": "THEN PROVE IT!"}
 ]
