@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 export(String, FILE, "*.json") var dialogue_file
+export var battle_id : String = "0"
 
 var dialogue = []
 var current_dialogue_id = 0
@@ -36,6 +37,7 @@ func next_script():
 	if current_dialogue_id >= len(dialogue):
 		$Timer.start()
 		$NinePatchRect.visible = false
+		get_tree().change_scene("res://scenes/battle_"+ battle_id +".tscn")
 		return
 	
 	$NinePatchRect/Name.text = dialogue[current_dialogue_id]['name']

@@ -40,7 +40,6 @@ shape = SubResource( 1 )
 position = Vector2( 4, -45 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -52,3 +51,4 @@ shape = SubResource( 5 )
 
 [node name="Dialogue" parent="." instance=ExtResource( 2 )]
 dialogue_file = "res://assets/Dialogue/chats/mino-dialog.json"
+battle_id = 3

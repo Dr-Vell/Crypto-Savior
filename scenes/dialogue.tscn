@@ -6,6 +6,7 @@
 [node name="Dialogue" type="CanvasLayer"]
 script = ExtResource( 2 )
 dialogue_file = "res://assets/Dialogue/chats/merchant-dialog.json"
+battle_id = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 anchor_left = 0.486
