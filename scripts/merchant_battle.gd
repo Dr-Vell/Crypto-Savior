@@ -138,6 +138,8 @@ func victory():
 	yield(get_tree().create_timer(0.25), "timeout")
 	GameState.player_current_motivation = player_current_motivation
 	GameState.player_hit = 40
+	GameState.merchant_defeated = true
+	GameState.player_current_position=Vector2(434,-85)
 	get_tree().change_scene("res://scenes/main.tscn")
 		
 func correct_answer():	

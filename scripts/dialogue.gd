@@ -36,13 +36,11 @@ func next_script():
 	
 	if current_dialogue_id >= len(dialogue):
 		$Timer.start()
-		$NinePatchRect.visible = false
 		get_tree().change_scene("res://scenes/battle_"+ battle_id +".tscn")
 		return
 	
 	$NinePatchRect/Name.text = dialogue[current_dialogue_id]['name']
 	$NinePatchRect/Text.text = dialogue[current_dialogue_id]['text']
-
 
 func _on_Timer_timeout():
 	d_active = false

@@ -22,7 +22,7 @@ func _ready():
 	
 
 func _input(_event):
-	if Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(BUTTON_LEFT):
+	if Input.is_action_just_pressed("ui_accept"):
 		$TextPanel.hide()
 		emit_signal("textpanel_closed")
 		
@@ -140,12 +140,14 @@ func victory():
 	yield(get_tree().create_timer(0.25), "timeout")
 	GameState.player_current_motivation = player_current_motivation
 	GameState.player_hit = 60
+	GameState.warrior_defeated = true
+	GameState.player_current_position=Vector2(850,-91)
 	get_tree().change_scene("res://scenes/main.tscn")
 		
 func correct_answer():	
 	show_text("Correct!")
 	enemy_current_motivation += GameState.player_hit
-	set_motivation($EnemyContainer/MotivationBar, enemy_current_motivation, GameState.merchant_max_motivation)	
+	set_motivation($EnemyContainer/MotivationBar, enemy_current_motivation, GameState.warrior_max_motivation)	
 	yield(self,"textpanel_closed")
 	
 func incorrect_answer():	
@@ -153,7 +155,7 @@ func incorrect_answer():
 	player_current_motivation -= GameState.enemy_hit
 	set_motivation($PlayerContainer/MotivationBar, player_current_motivation, GameState.player_max_motivation)
 	enemy_current_motivation += GameState.player_hit
-	set_motivation($EnemyContainer/MotivationBar, enemy_current_motivation, GameState.merchant_max_motivation)
+	set_motivation($EnemyContainer/MotivationBar, enemy_current_motivation, GameState.warrior_max_motivation)
 	yield(self,"textpanel_closed")	
 	show_text("You lost 20 motivation")
 	yield(self,"textpanel_closed")

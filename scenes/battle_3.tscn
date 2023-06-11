@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/Character/AnimationSheet_Character.png" type="Texture" id=1]
 [ext_resource path="res://assets/Enemies/Mino/Mino1.png" type="Texture" id=2]
-[ext_resource path="res://assets/Map/Battle/battle_1_bg.png" type="Texture" id=3]
+[ext_resource path="res://assets/Map/Battle/battle_3_bg.png" type="Texture" id=3]
 [ext_resource path="res://assets/Fonts/nes.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/Fonts/Adventurer.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://scripts/mino_battle.gd" type="Script" id=6]
@@ -158,6 +158,7 @@ script = ExtResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 3 )
+expand = true
 stretch_mode = 1
 
 [node name="EnemyContainer" type="VBoxContainer" parent="."]
@@ -192,7 +193,7 @@ position = Vector2( 91, 79 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 21 )
 animation = "idle"
-frame = 4
+frame = 2
 playing = true
 
 [node name="PlayerContainer" type="VBoxContainer" parent="."]
