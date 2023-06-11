@@ -2148,7 +2148,6 @@ tile_data = PoolIntArray( -458756, 3, 0, -524287, 18, 0, -524263, 25, 0, -524262
 [node name="Enemy 3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 430, -58 )
 scale = Vector2( 2, 2 )
-script = null
 
 [node name="Enemy 1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 848, -122 )
@@ -2157,7 +2156,6 @@ scale = Vector2( 1.2, 1.2 )
 [node name="Enemy 2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1259, -97 )
 scale = Vector2( 1.7, 1.7 )
-script = null
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 scale = Vector2( 1.5, 1.5 )
