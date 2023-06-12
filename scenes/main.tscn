@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://assets/Map/Interiors_free/32x32/Modified Interiors.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://scenes/enemy_1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/enemy_2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/enemy_3.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/main.gd" type="Script" id=8]
+[ext_resource path="res://scripts/main.gd" type="Script" id=8]
 [ext_resource path="res://assets/Map/Interiors_free/32x32/plant.png" type="Texture" id=9]
+[ext_resource path="res://scripts/trigger_book.gd" type="Script" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=74]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -2273,6 +2274,9 @@ points = PoolVector2Array( 11, 14, 86, 14, 86, 59, 11, 59 )
 [sub_resource type="RectangleShape2D" id=124]
 extents = Vector2( 18, 52 )
 
+[sub_resource type="RectangleShape2D" id=125]
+extents = Vector2( 30, 10.5 )
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
 
@@ -2353,3 +2357,25 @@ texture = ExtResource( 9 )
 [node name="Sprite" type="Sprite" parent="Plants 3"]
 position = Vector2( 233, -6 )
 texture = ExtResource( 9 )
+
+[node name="Book 1" type="Area2D" parent="."]
+position = Vector2( -86, -94 )
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Book 1"]
+position = Vector2( 3, -26.5 )
+shape = SubResource( 125 )
+
+[node name="Book 2" type="Area2D" parent="."]
+position = Vector2( -20, -94 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Book 2"]
+position = Vector2( 3, -26.5 )
+shape = SubResource( 125 )
+
+[node name="Book 3" type="Area2D" parent="."]
+position = Vector2( 44, -94 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Book 3"]
+position = Vector2( 3, -26.5 )
+shape = SubResource( 125 )
