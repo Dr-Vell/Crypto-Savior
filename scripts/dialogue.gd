@@ -23,7 +23,15 @@ func load_dialogue():
 	var file = File.new()
 	if file.file_exists(dialogue_file):
 		file.open(dialogue_file, file.READ)
-		return parse_json(file.get_as_text())
+		var data = parse_json(file.get_as_text())
+		if data != null:
+			return data
+		else:
+			print("Error al parsear el archivo JSON")
+			return []
+	else:
+		print("Archivo JSON no encontrado")
+		return []
 
 func _input(event):
 	if not d_active:
@@ -34,13 +42,10 @@ func _input(event):
 func next_script():
 	current_dialogue_id += 1
 	
-	if current_dialogue_id >= len(dialogue):
-		$Timer.start()
+	if dialogue == null or current_dialogue_id >= dialogue.size():
+		d_active = false
 		get_tree().change_scene("res://scenes/battle_"+ battle_id +".tscn")
 		return
 	
 	$NinePatchRect/Name.text = dialogue[current_dialogue_id]['name']
 	$NinePatchRect/Text.text = dialogue[current_dialogue_id]['text']
-
-func _on_Timer_timeout():
-	d_active = false

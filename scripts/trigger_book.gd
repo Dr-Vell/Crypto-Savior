@@ -5,5 +5,6 @@ func _input(event):
 		open_book(self.name)
 		
 func open_book(book):
-	pass
-	
+	var book_panel = get_parent().get_node("BookPanel")	
+	if book_panel:
+		book_panel.start(book)

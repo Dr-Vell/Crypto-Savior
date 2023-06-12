@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://assets/Map/Interiors_free/32x32/Modified Interiors.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scripts/main.gd" type="Script" id=8]
 [ext_resource path="res://assets/Map/Interiors_free/32x32/plant.png" type="Texture" id=9]
 [ext_resource path="res://scripts/trigger_book.gd" type="Script" id=10]
+[ext_resource path="res://scenes/book.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=74]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -2358,24 +2359,28 @@ texture = ExtResource( 9 )
 position = Vector2( 233, -6 )
 texture = ExtResource( 9 )
 
-[node name="Book 1" type="Area2D" parent="."]
+[node name="CF-1 Intro" type="Area2D" parent="."]
 position = Vector2( -86, -94 )
 script = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Book 1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CF-1 Intro"]
 position = Vector2( 3, -26.5 )
 shape = SubResource( 125 )
 
-[node name="Book 2" type="Area2D" parent="."]
+[node name="CF-2 Attack" type="Area2D" parent="."]
 position = Vector2( -20, -94 )
+script = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Book 2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CF-2 Attack"]
 position = Vector2( 3, -26.5 )
 shape = SubResource( 125 )
 
-[node name="Book 3" type="Area2D" parent="."]
+[node name="CF-3 Defense" type="Area2D" parent="."]
 position = Vector2( 44, -94 )
+script = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Book 3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CF-3 Defense"]
 position = Vector2( 3, -26.5 )
 shape = SubResource( 125 )
+
+[node name="BookPanel" parent="." instance=ExtResource( 11 )]

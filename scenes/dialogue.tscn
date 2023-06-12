@@ -6,7 +6,6 @@
 [node name="Dialogue" type="CanvasLayer"]
 script = ExtResource( 2 )
 dialogue_file = "res://assets/Dialogue/chats/merchant-dialog.json"
-battle_id = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 anchor_left = 0.486
@@ -37,9 +36,3 @@ margin_right = 665.5
 margin_bottom = 107.5
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba 1 texto de prueba "
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.4
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

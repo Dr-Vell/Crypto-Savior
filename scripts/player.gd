@@ -33,7 +33,7 @@ func set_anims():
 	else:
 		_animation_player.play("idle")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	set_anims()
 	velocity = move_and_slide(velocity)
