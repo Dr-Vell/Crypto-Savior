@@ -44,6 +44,7 @@ func next_script():
 	
 	if dialogue == null or current_dialogue_id >= dialogue.size():
 		d_active = false
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://scenes/battle_"+ battle_id +".tscn")
 		return
 	

@@ -21,4 +21,5 @@ func open_book(book):
 		book_panel.start(book)		
 		
 func victory():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://scenes/victory.tscn")

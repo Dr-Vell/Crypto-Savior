@@ -13,7 +13,9 @@ func _ready():
 	$TestPanel.hide()
 	show_text("Wild Merchant appears unexpectedly!")
 	yield(self,"textpanel_closed")
-	show_text("Merchant: If you speak the truth then answer these questions correctly!")
+	show_text("Merchant: If you speak the truth...")
+	yield(self,"textpanel_closed")
+	show_text("Merchant: ...answer these questions correctly!")
 	yield(self,"textpanel_closed")
 	yield(get_tree().create_timer(0.15), "timeout")
 	$TestPanel.show()
@@ -123,6 +125,7 @@ func death():
 	show_text("Merchant: Get the hell out.")
 	yield(self,"textpanel_closed")
 	yield(get_tree().create_timer(0.25), "timeout")
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://scenes/gameover.tscn")
 	
 		
@@ -140,6 +143,7 @@ func victory():
 	GameState.player_hit = 40
 	GameState.merchant_defeated = true
 	GameState.player_current_position=Vector2(434,-85)
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://scenes/main.tscn")
 		
 func correct_answer():	

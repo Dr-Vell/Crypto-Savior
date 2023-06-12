@@ -123,6 +123,7 @@ func death():
 	show_text("Mino: Prepare yourself better next time.")
 	yield(self,"textpanel_closed")
 	yield(get_tree().create_timer(0.25), "timeout")
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://scenes/gameover.tscn")
 	
 		

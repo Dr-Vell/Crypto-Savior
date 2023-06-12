@@ -123,6 +123,7 @@ func death():
 	show_text("Warrior: Do not return!")
 	yield(self,"textpanel_closed")
 	yield(get_tree().create_timer(0.25), "timeout")
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://scenes/gameover.tscn")
 	
 		
@@ -142,6 +143,7 @@ func victory():
 	GameState.player_hit = 60
 	GameState.warrior_defeated = true
 	GameState.player_current_position=Vector2(850,-91)
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://scenes/main.tscn")
 		
 func correct_answer():	
