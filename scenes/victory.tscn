@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/EndScreens/gameOver.png" type="Texture" id=1]
+[ext_resource path="res://assets/EndScreens/victoryScreen.png" type="Texture" id=1]
 [ext_resource path="res://scripts/endScene.gd" type="Script" id=2]
 
 [node name="Control" type="Control"]

@@ -93,55 +93,55 @@ func load_dialogue(book):
 			+ "transfer.\n"
 			
 	var b3p1 = "How to prevent CFs:\n\n" \
-				+ "1. Categorize the data processed, stored, or \n"\
-				+ "transmitted by an application. Identify sensitive \n"\
-				+ "data based on privacy laws, regulatory requirements,\n"\
-				+ "or business needs.\n"\
-				+ "2. Minimize unnecessary storage of sensitive data. \n"\
-				+ "Dispose of it promptly or utilize PCI DSS compliant \n"\
-				+ "tokenization or truncation methods. \n"\
-				+ "3. Ensure that all sensitive data at rest is encrypted.\n"\
-				+ "4. Implement up-to-date and robust standard ,\n"\
-				+ "algorithms protocols, and keys, and employ proper  \n"\
-				+ "key management practices.\n"\
-				+ "5. Encrypt all data in transit using secure protocols \n"\
-				+ "such as TLS with forward secrecy (FS) ciphers. \n"\
-				+ "Prioritize ciphers at the server level and set secure\n"\
-				+ "parameters. Enforce encryption through directives \n"\
+			+ "1. Categorize the data processed, stored, or \n"\
+			+ "transmitted by an application. Identify sensitive \n"\
+			+ "data based on privacy laws, regulatory requirements,\n"\
+			+ "or business needs.\n"\
+			+ "2. Minimize unnecessary storage of sensitive data. \n"\
+			+ "Dispose of it promptly or utilize PCI DSS compliant \n"\
+			+ "tokenization or truncation methods. \n"\
+			+ "3. Ensure that all sensitive data at rest is encrypted.\n"\
+			+ "4. Implement up-to-date and robust standard ,\n"\
+			+ "algorithms protocols, and keys, and employ proper  \n"\
+			+ "key management practices.\n"\
+			+ "5. Encrypt all data in transit using secure protocols \n"\
+			+ "such as TLS with forward secrecy (FS) ciphers. \n"\
+			+ "Prioritize ciphers at the server level and set secure\n"\
+			+ "parameters. Enforce encryption through directives \n"\
 				
 	var b3p2 = "like HTTP Strict Transport Security (HSTS).\n"\
-				+ "6. Disable caching for responses containing sensitive \n"\
-				+ "data.\n"\
-				+ "7. Apply necessary security controls based on the  \n"\
-				+ "data classification.\n"\
-				+ "	8. Avoid using outdated protocols like FTP and SMTP \n"\
-				+ "	for transmitting sensitive data.\n"\
-				+ "	9. Store passwords using strong adaptive and salted \n"\
-				+ "	hashing functions with a work factor (delay factor), \n"\
-				+ "	such as Argon2, scrypt, bcrypt, or PBKDF2.\n"\
-				+ "	10. Choose appropriate initialization vectors for the \n"\
-				+ "	mode of operation. For many modes, use a \n"\
-				+ "	cryptographically secure pseudo-random number \n"\
-				+ "	generator (CSPRNG). If a mode requires a nonce, the \n"\
-				+ "	initialization vector (IV) does not need a CSPRNG. \n"\
-				+ "	In all cases, avoid reusing the IV with a fixed key.\n"
-				
+			+ "6. Disable caching for responses containing sensitive \n"\
+			+ "data.\n"\
+			+ "7. Apply necessary security controls based on the  \n"\
+			+ "data classification.\n"\
+			+ "	8. Avoid using outdated protocols like FTP and SMTP \n"\
+			+ "	for transmitting sensitive data.\n"\
+			+ "	9. Store passwords using strong adaptive and salted \n"\
+			+ "	hashing functions with a work factor (delay factor), \n"\
+			+ "	such as Argon2, scrypt, bcrypt, or PBKDF2.\n"\
+			+ "	10. Choose appropriate initialization vectors for the \n"\
+			+ "	mode of operation. For many modes, use a \n"\
+			+ "	cryptographically secure pseudo-random number \n"\
+			+ "	generator (CSPRNG). If a mode requires a nonce, the \n"\
+			+ "	initialization vector (IV) does not need a CSPRNG. \n"\
+			+ "	In all cases, avoid reusing the IV with a fixed key.\n"
+			
 	var b3p3 = 	"11. Prefer authenticated encryption over basic \n"\
-				+ "encryption.\n"\
-				+ "12. Generate keys randomly using cryptographic  \n"\
-				+ "methods and store them as byte arrays in memory. \n"\
-				+ "If a password is used, convert it to a key using an  \n"\
-				+ "appropriate password-based key derivation function.\n"\
-				+ "13. Ensure the use of cryptographic randomness  \n"\
-				+ "where necessary and avoid predictable seeding or \n"\
-				+ "low entropy. Most modern APIs do not require  \n"\
-				+ "developers to seed the CSPRNG for security .\n"\
-				+ "purposes\n"\
-				+ "14. Steer clear of deprecated cryptographic functions \n"\
-				+ "and padding schemes such as MD5, SHA1, and   \n"\
-				+ "PKCS number 1 v1.5.\n"\
-				+ "15. Independently verify the effectiveness of \n"\
-				+ "configurations and settings."
+			+ "encryption.\n"\
+			+ "12. Generate keys randomly using cryptographic  \n"\
+			+ "methods and store them as byte arrays in memory. \n"\
+			+ "If a password is used, convert it to a key using an  \n"\
+			+ "appropriate password-based key derivation function.\n"\
+			+ "13. Ensure the use of cryptographic randomness  \n"\
+			+ "where necessary and avoid predictable seeding or \n"\
+			+ "low entropy. Most modern APIs do not require  \n"\
+			+ "developers to seed the CSPRNG for security .\n"\
+			+ "purposes\n"\
+			+ "14. Steer clear of deprecated cryptographic functions \n"\
+			+ "and padding schemes such as MD5, SHA1, and   \n"\
+			+ "PKCS number 1 v1.5.\n"\
+			+ "15. Independently verify the effectiveness of \n"\
+			+ "configurations and settings."
 	
 	if book == "CF-1 Intro":
 		return [b1p1,b1p2,b1p3]
