@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-export(String, FILE, "*.json") var dialogue_file
+export var npc : String = "NPC"
 export var battle_id : String = "0"
 
 var dialogue = []
@@ -20,18 +20,35 @@ func start():
 	next_script()
 
 func load_dialogue():
-	var file = File.new()
-	if file.file_exists(dialogue_file):
-		file.open(dialogue_file, file.READ)
-		var data = parse_json(file.get_as_text())
-		if data != null:
-			return data
-		else:
-			print("Error al parsear el archivo JSON")
-			return []
-	else:
-		print("Archivo JSON no encontrado")
-		return []
+	if npc == "Merchant":
+		var d1 = "..."
+		var d2 = "...Welcome to my shop stranger."
+		var d3 = "There's some interesting stuff here you might want to take."
+		var d4 = "but..."
+		var d5 = "THEY'RE NOT FOR SALE! SO DON'T TOUCH ANYTHING!"
+		var d6 = "Thanks."
+		var d7 = "..."
+		var d8 = "<<The merchant keeps staring at you>>"
+		var d9 = "Oh, I see you are a Crypto Guard."
+		var d10 = "..."
+		var d11 = "THEN PROVE IT!"
+		return [d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11]
+		
+	if npc == "Warrior":
+		var d1 = "SILENCE Mr Guard of the Cryptos!"
+		var d2 = "I don't wish to be cryptoed anymore..."
+		var d3 = "I just want to be happy."
+		var d4 = "<<The fierce warrior keeps staring at you>>"
+		var d5 = "Okay...okay, you came to do your thing right?"
+		var d6 = "First let's see if I can trust ur knowledge about these attacks..."
+		return [d1,d2,d3,d4,d5,d6]
+		
+	if npc == "Mino":
+		var d1 = "..."
+		var d2 = "Yes, I can talk."
+		var d3 = "No, you wont leave here unscathed."
+		var d4 = "GRRRRR!"
+		return [d1,d2,d3,d4]
 
 func _input(event):
 	if not d_active:
@@ -47,6 +64,17 @@ func next_script():
 # warning-ignore:return_value_discarded
 		get_tree().change_scene("res://scenes/battle_"+ battle_id +".tscn")
 		return
-	
-	$NinePatchRect/Name.text = dialogue[current_dialogue_id]['name']
-	$NinePatchRect/Text.text = dialogue[current_dialogue_id]['text']
+		
+	if npc == "Merchant":
+		if current_dialogue_id in [0,6,7]:
+			$NinePatchRect/Name.text = " "
+		else:
+			$NinePatchRect/Name.text = npc
+	elif npc == "Warrior":
+		if current_dialogue_id == 3:
+			$NinePatchRect/Name.text = " "
+		else:
+			$NinePatchRect/Name.text = npc
+	else:
+		$NinePatchRect/Name.text = npc
+	$NinePatchRect/Text.text = dialogue[current_dialogue_id]

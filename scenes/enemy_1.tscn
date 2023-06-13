@@ -33,7 +33,7 @@ shape = SubResource( 1 )
 position = Vector2( 4, -45 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -44,5 +44,5 @@ position = Vector2( 0, 3 )
 shape = SubResource( 3 )
 
 [node name="Dialogue" parent="." instance=ExtResource( 8 )]
-dialogue_file = "res://assets/Dialogue/chats/warrior-dialog.json"
+npc = "Warrior"
 battle_id = "2"

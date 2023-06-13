@@ -44,6 +44,7 @@ shape = SubResource( 1 )
 position = Vector2( 4, -45 )
 frames = SubResource( 2 )
 animation = "idle"
+frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -54,4 +55,5 @@ position = Vector2( 4.5, -26.5 )
 shape = SubResource( 7 )
 
 [node name="Dialogue" parent="." instance=ExtResource( 2 )]
+npc = "Merchant"
 battle_id = "1"
