@@ -52,7 +52,7 @@ func attack(option):
 func check_answer(test, answer):
 	match (test):
 		1:
-			if answer == "A":
+			if answer == "C":
 				correct_answer()
 				test_id=2
 				show_test(test_id)
@@ -67,7 +67,7 @@ func check_answer(test, answer):
 				show_test(test_id)
 				
 		2:
-			if answer == "C":
+			if answer == "B":
 				correct_answer()
 				test_id=3
 				show_test(test_id)
@@ -81,7 +81,7 @@ func check_answer(test, answer):
 				test_id=3
 				show_test(test_id)
 		3:
-			if answer == "B":
+			if answer == "A":
 				correct_answer()
 				victory()
 				
@@ -102,17 +102,17 @@ func set_motivation(bar, motivation, max_motivation):
 
 func show_test(test):
 	if test==2:
-		$TestPanel/Question.text = "Pregunta 2 Equisde"
-		$TestPanel/OptionA/OptionAText.text = "Respuesta A"
-		$TestPanel/OptionB/OptionBText.text = "Respuesta B"
-		$TestPanel/OptionC/OptionCText.text = "Respuesta C"	
+		$TestPanel/Question.text = "Which flaw can potentially enable an attacker to obtain a \n database containing users' passwords?"
+		$TestPanel/OptionA/OptionAText.text = "Weak key generation"
+		$TestPanel/OptionB/OptionBText.text = "File upload flaw"
+		$TestPanel/OptionC/OptionCText.text = "Reverse encryption"	
 		yield(get_tree().create_timer(0.15), "timeout")
 		$TestPanel.show()
 	else:
-		$TestPanel/Question.text = "Pregunta 3 Equisde"
-		$TestPanel/OptionA/OptionAText.text = "Respuesta A"
-		$TestPanel/OptionB/OptionBText.text = "Respuesta B"
-		$TestPanel/OptionC/OptionCText.text = "Respuesta C"	
+		$TestPanel/Question.text = "What technique can an attacker use to hijack a user's authenticated \n session and access their private data?"
+		$TestPanel/OptionA/OptionAText.text = "Downgrading connections from HTTPS to HTTP"
+		$TestPanel/OptionB/OptionBText.text = "Rainbow attack"
+		$TestPanel/OptionC/OptionCText.text = "Reverse encryption"	
 		yield(get_tree().create_timer(0.15), "timeout")
 		$TestPanel.show()
 		

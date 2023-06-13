@@ -50,7 +50,7 @@ func attack(option):
 func check_answer(test, answer):
 	match (test):
 		1:
-			if answer == "A":
+			if answer == "B":
 				correct_answer()
 				test_id=2
 				show_test(test_id)
@@ -65,7 +65,7 @@ func check_answer(test, answer):
 				show_test(test_id)
 				
 		2:
-			if answer == "C":
+			if answer == "A":
 				correct_answer()
 				test_id=3
 				show_test(test_id)
@@ -79,7 +79,7 @@ func check_answer(test, answer):
 				test_id=3
 				show_test(test_id)
 		3:
-			if answer == "B":
+			if answer == "C":
 				correct_answer()
 				victory()
 				
@@ -100,17 +100,17 @@ func set_motivation(bar, motivation, max_motivation):
 
 func show_test(test):
 	if test==2:
-		$TestPanel/Question.text = "Pregunta 2 Equisde"
-		$TestPanel/OptionA/OptionAText.text = "Respuesta A"
-		$TestPanel/OptionB/OptionBText.text = "Respuesta B"
-		$TestPanel/OptionC/OptionCText.text = "Respuesta C"	
+		$TestPanel/Question.text = "Which of the following is NOT a preventive measure for cryptographic failures?"
+		$TestPanel/OptionA/OptionAText.text = "Using outdated protocols like FTP and SMTP for transmitting sensitive data."
+		$TestPanel/OptionB/OptionBText.text = "Categorizing data based on privacy laws and business needs."
+		$TestPanel/OptionC/OptionCText.text = "Choosing appropriate initialization vectors for the mode of operation."	
 		yield(get_tree().create_timer(0.15), "timeout")
 		$TestPanel.show()
 	else:
-		$TestPanel/Question.text = "Pregunta 3 Equisde"
-		$TestPanel/OptionA/OptionAText.text = "Respuesta A"
-		$TestPanel/OptionB/OptionBText.text = "Respuesta B"
-		$TestPanel/OptionC/OptionCText.text = "Respuesta C"	
+		$TestPanel/Question.text = "What is the recommended approach for storing passwords to \n prevent cryptographic failures?"
+		$TestPanel/OptionA/OptionAText.text = "Generating keys randomly using cryptographic methods and storing them as plain text."
+		$TestPanel/OptionB/OptionBText.text = "Storing passwords as plain text for easy retrieval."
+		$TestPanel/OptionC/OptionCText.text = "Converting passwords to keys using a password-based key derivation function."	
 		yield(get_tree().create_timer(0.15), "timeout")
 		$TestPanel.show()
 		

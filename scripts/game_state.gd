@@ -11,6 +11,6 @@ var merchant_max_motivation = 60
 var warrior_max_motivation = 120
 var mino_max_motivation = 180
 
-var merchant_defeated = false
-var warrior_defeated = false
-var mino_defeated = false
+var merchant_defeated = true
+var warrior_defeated = true
+var mino_defeated = true

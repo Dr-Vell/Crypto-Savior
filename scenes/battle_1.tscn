@@ -263,7 +263,7 @@ margin_right = -0.999939
 margin_bottom = -194.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 4 )
-text = "En que consiste la famosa vulnerabilidad web \"Criptographic Failures\"?"
+text = "What is Criptografic Failures?"
 align = 1
 valign = 1
 
@@ -285,8 +285,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -2.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Según la documentación de Godot1, el carácter \\t debería funcionar para tabular el texto del botón. 
-Asegúrate de que el texto tenga suficiente espacio para mostrar la tabulación y que no haya ningún otro"
+text = "Cryptographic Failures are instances where cryptographic systems or algorithms are compromised, leading to the unauthorized 
+disclosure, alteration, or destruction of sensitive information"
 align = 1
 valign = 1
 
@@ -308,8 +308,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -2.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Según la documentación de Godot1, el carácter \\t debería funcionar para tabular el texto del botón. 
-Asegúrate de que el texto tenga suficiente espacio para mostrar la tabulación y que no haya ningún otro"
+text = "Cryptographic Failures occur when a cryptographic algorithm produces a perfect encryption that cannot be decrypted,
+rendering the encrypted data permanently inaccessible."
 align = 1
 valign = 1
 
@@ -331,8 +331,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -2.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Según la documentación de Godot1, el carácter \\t debería funcionar para tabular el texto del botón. 
-Asegúrate de que el texto tenga suficiente espacio para mostrar la tabulación y que no haya ningún otro"
+text = "Cryptographic Failures refer to the process of intentionally encrypting data to make it more vulnerable
+to unauthorized access or manipulation."
 align = 1
 valign = 1
 

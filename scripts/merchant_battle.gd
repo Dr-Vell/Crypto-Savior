@@ -102,17 +102,17 @@ func set_motivation(bar, motivation, max_motivation):
 
 func show_test(test):
 	if test==2:
-		$TestPanel/Question.text = "Pregunta 2 Equisde"
-		$TestPanel/OptionA/OptionAText.text = "Respuesta A"
-		$TestPanel/OptionB/OptionBText.text = "Respuesta B"
-		$TestPanel/OptionC/OptionCText.text = "Respuesta C"	
+		$TestPanel/Question.text = "How can attackers compromise sensitive information?"
+		$TestPanel/OptionA/OptionAText.text = "By increasing encryption key resilience."
+		$TestPanel/OptionB/OptionBText.text = "By complying with standardized protocols."
+		$TestPanel/OptionC/OptionCText.text = "By extracting data from web browsers."	
 		yield(get_tree().create_timer(0.15), "timeout")
 		$TestPanel.show()
 	else:
-		$TestPanel/Question.text = "Pregunta 3 Equisde"
-		$TestPanel/OptionA/OptionAText.text = "Respuesta A"
-		$TestPanel/OptionB/OptionBText.text = "Respuesta B"
-		$TestPanel/OptionC/OptionCText.text = "Respuesta C"	
+		$TestPanel/Question.text = "What are the potential consequences of cryptographic failure?"
+		$TestPanel/OptionA/OptionAText.text = "Cryptographic failure can cause malfunctioning of electronic devices and lead to random shutdowns."
+		$TestPanel/OptionB/OptionBText.text = "Cryptographic failure can lead to the unauthorized disclosure of sensitive information, such as passwords, \n credit card numbers, or classified documents."
+		$TestPanel/OptionC/OptionCText.text = "Cryptographic failure can result in the loss of internet connectivity and disrupt online communication."
 		yield(get_tree().create_timer(0.15), "timeout")
 		$TestPanel.show()
 		

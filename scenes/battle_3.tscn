@@ -23,12 +23,10 @@ expand_margin_top = 1.0
 expand_margin_bottom = 1.0
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 864, 5, 144, 96 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 1152, 5, 144, 96 )
 
@@ -193,7 +191,7 @@ position = Vector2( 91, 79 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 21 )
 animation = "idle"
-frame = 2
+frame = 3
 playing = true
 
 [node name="PlayerContainer" type="VBoxContainer" parent="."]
@@ -252,12 +250,12 @@ custom_styles/panel = SubResource( 13 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 18.0
+margin_top = 9.0
 margin_right = -0.999939
-margin_bottom = -194.0
+margin_bottom = -186.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 4 )
-text = "En que consiste la famosa vulnerabilidad web \"Criptographic Failures\"?"
+text = "According to the text, what is the recommended method to prevent cryptographic failures?"
 align = 1
 valign = 1
 
@@ -279,8 +277,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -2.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Según la documentación de Godot1, el carácter \\t debería funcionar para tabular el texto del botón. 
-Asegúrate de que el texto tenga suficiente espacio para mostrar la tabulación y que no haya ningún otro"
+text = "Avoid verifying the effectiveness of configurations and settings."
 align = 1
 valign = 1
 
@@ -302,8 +299,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -2.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Según la documentación de Godot1, el carácter \\t debería funcionar para tabular el texto del botón. 
-Asegúrate de que el texto tenga suficiente espacio para mostrar la tabulación y que no haya ningún otro"
+text = "Encrypt all sensitive data at rest."
 align = 1
 valign = 1
 
@@ -325,8 +321,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -2.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Según la documentación de Godot1, el carácter \\t debería funcionar para tabular el texto del botón. 
-Asegúrate de que el texto tenga suficiente espacio para mostrar la tabulación y que no haya ningún otro"
+text = "Use deprecated cryptographic functions and padding schemes."
 align = 1
 valign = 1
 
