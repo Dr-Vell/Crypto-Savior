@@ -140,6 +140,7 @@ func victory():
 	GameState.player_current_motivation = player_current_motivation
 	GameState.mino_defeated = true
 	GameState.player_current_position=Vector2(1266,-81)
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://scenes/main.tscn")
 		
 func correct_answer():	
