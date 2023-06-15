@@ -1,0 +1,355 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://assets/Character/AnimationSheet_Character.png" type="Texture" id=1]
+[ext_resource path="res://assets/Enemies/Mino/Mino1.png" type="Texture" id=2]
+[ext_resource path="res://assets/Map/Battle/battle_3_bg.png" type="Texture" id=3]
+[ext_resource path="res://assets/Fonts/nes.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/Fonts/Adventurer.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://scripts/mino_battle.gd" type="Script" id=6]
+[ext_resource path="res://assets/Sounds/combat.mp3" type="AudioStream" id=7]
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.0352941, 0.568627, 0.129412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.654902, 0.121569, 0.121569, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 864, 5, 144, 96 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 1152, 5, 144, 96 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 16 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 64, 64, 65, 66, 67, 68, 69, 70, 71 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "death"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 56, 57, 58, 59, 60, 61, 62, 63 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "idle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "walk"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19 ]
+}
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0, 0, 0, 0.611765 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.94902, 0.65098, 0.235294, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.537255, 0.356863, 0.0745098, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="DynamicFont" id=17]
+size = 40
+font_data = ExtResource( 5 )
+
+[node name="Battle" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+
+[node name="BG" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+
+[node name="EnemyContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 669.0
+margin_top = 313.0
+margin_right = -176.0
+margin_bottom = -137.0
+
+[node name="MotivationBar" type="ProgressBar" parent="EnemyContainer"]
+margin_right = 179.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 0, 16 )
+custom_styles/fg = SubResource( 11 )
+custom_styles/bg = SubResource( 12 )
+max_value = 60.0
+step = 1.0
+percent_visible = false
+
+[node name="Motivation" type="Label" parent="EnemyContainer/MotivationBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "M: 0/60"
+align = 1
+valign = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="EnemyContainer"]
+position = Vector2( 91, 79 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 21 )
+animation = "idle"
+frame = 2
+playing = true
+
+[node name="PlayerContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 235.0
+margin_top = 375.0
+margin_right = -595.0
+margin_bottom = -146.0
+
+[node name="MotivationBar" type="ProgressBar" parent="PlayerContainer"]
+margin_right = 194.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 0, 16 )
+custom_styles/fg = SubResource( 11 )
+custom_styles/bg = SubResource( 12 )
+max_value = 60.0
+step = 1.0
+value = 60.0
+percent_visible = false
+
+[node name="Motivation" type="Label" parent="PlayerContainer/MotivationBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "M: 60/60"
+align = 1
+valign = 1
+
+[node name="Player" type="Sprite" parent="PlayerContainer"]
+position = Vector2( 97, 49 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 9
+frame = 16
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerContainer"]
+anims/RESET = SubResource( 8 )
+anims/attack = SubResource( 19 )
+anims/death = SubResource( 20 )
+anims/idle = SubResource( 9 )
+anims/walk = SubResource( 10 )
+
+[node name="TestPanel" type="Panel" parent="."]
+anchor_left = 0.062
+anchor_top = 0.05
+anchor_right = 0.94
+anchor_bottom = 0.432
+margin_left = 0.511997
+margin_right = 0.439941
+margin_bottom = -0.200012
+custom_styles/panel = SubResource( 13 )
+
+[node name="Question" type="Label" parent="TestPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 9.0
+margin_right = -0.999939
+margin_bottom = -186.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "According to the text, what is the recommended method to prevent cryptographic failures?"
+align = 1
+valign = 1
+
+[node name="OptionA" type="Button" parent="TestPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -0.999939
+margin_bottom = -125.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/normal = SubResource( 16 )
+icon_align = 1
+
+[node name="OptionAText" type="Label" parent="TestPanel/OptionA"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Avoid verifying the effectiveness of configurations and settings."
+align = 1
+valign = 1
+
+[node name="OptionB" type="Button" parent="TestPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 112.0
+margin_right = -0.999939
+margin_bottom = -67.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/normal = SubResource( 16 )
+icon_align = 1
+
+[node name="OptionBText" type="Label" parent="TestPanel/OptionB"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Encrypt all sensitive data at rest."
+align = 1
+valign = 1
+
+[node name="OptionC" type="Button" parent="TestPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 172.0
+margin_right = -0.999939
+margin_bottom = -7.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/normal = SubResource( 16 )
+icon_align = 1
+
+[node name="OptionCText" type="Label" parent="TestPanel/OptionC"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Use deprecated cryptographic functions and padding schemes."
+align = 1
+valign = 1
+
+[node name="TextPanel" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -128.0
+margin_right = -8.0
+margin_bottom = -8.0
+custom_styles/panel = SubResource( 18 )
+
+[node name="Label" type="Label" parent="TextPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 34.0
+margin_top = 38.0
+margin_right = -8.0
+margin_bottom = -37.0
+custom_fonts/font = SubResource( 17 )
+text = "Correct!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[connection signal="pressed" from="TestPanel/OptionA" to="." method="_on_OptionA_pressed"]
+[connection signal="pressed" from="TestPanel/OptionB" to="." method="_on_OptionB_pressed"]
+[connection signal="pressed" from="TestPanel/OptionC" to="." method="_on_OptionC_pressed"]
